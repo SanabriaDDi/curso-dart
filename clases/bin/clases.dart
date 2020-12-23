@@ -1,17 +1,27 @@
 void main(List<String> args) {
-  Animales animal = new Animales(nombre: 'Aguila', tipo: 'Ave');
-  print(animal.toString());
+  //Animales animal = new Animales(nombre: 'Aguila', tipo: 'Ave');
+  //print(animal.toString());
+  var json = {'nombre': 'serpiente', 'tipo': 'reptil'};
+  Animales animal = Animales.fromJson(json);
+  print('Animal: ${animal.nombre} - ${animal.tipo}');
 }
 
 class Animales {
   String nombre, tipo;
 
-  Animales({String nombre, String tipo = ''}) {
+  /* Animales({String nombre, String tipo = ''}) {
     this.nombre = nombre;
     this.tipo = tipo;
   }
 
   String toString() {
     return 'Animal: ${this.nombre} - ${this.tipo}';
+  } */
+
+  //Animales({this.nombre, this.tipo});
+
+  Animales.fromJson(Map jsonMap) {
+    nombre = jsonMap['nombre'];
+    tipo = jsonMap['tipo'];
   }
 }
