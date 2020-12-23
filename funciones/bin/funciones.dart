@@ -2,7 +2,7 @@ import 'package:meta/meta.dart';
 
 void main(List<String> arguments) {
   print(holaMundo());
-  print(sumar(5, 5));
+  print(sumar(10, multiplicacion(a: 1, b: 2)));
   multiplicacion(b: 10);
 }
 
@@ -16,9 +16,9 @@ String sumar(int a, int b) {
 }
 
 //Función con parámetros opcionales y requeridos
-multiplicacion({int a, @required int b}) {
+int multiplicacion({int a, @required int b}) {
   a ??= 1;
   b ??= 1; //Si esta variable es nula (??=) se inicializa con 1
 
-  print('a x b = ${a * b}');
+  return a * b;
 }
